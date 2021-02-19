@@ -20,11 +20,26 @@ function modal(){
     }
     
     btnmenu.forEach((item, i)=> item.addEventListener('click', function(){
-        
-            about.style.display = 'none';
-            main.style.display = 'flex';
-        
-        alert(i);
+            breaker.style.display = "block";
+            section.forEach((item)=> item.style.display = 'none');
+            
+            
+            setTimeout(block, 1100);
+            setTimeout(next, 750);
+            setTimeout(back, 3000);
+            function block(){
+                section[i].style.display = 'block';
+            }
+            function next(){
+                menu.classList.remove('active');
+                
+                
+            }
+            
+      
     }));
+    
+        
+    
 }
 module.exports = modal;

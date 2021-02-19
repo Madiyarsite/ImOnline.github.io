@@ -80,21 +80,20 @@ function modal(){
     }
     
     btnmenu.forEach((item, i)=> item.addEventListener('click', function(){
-        
-            section.forEach((item)=> item.style.display = 'none');
             breaker.style.display = "block";
+            section.forEach((item)=> item.style.display = 'none');
             
-            setTimeout(block, 1000);
-            setTimeout(next, 600);
             
+            setTimeout(block, 1100);
+            setTimeout(next, 750);
+            setTimeout(back, 3000);
             function block(){
                 section[i].style.display = 'block';
-                
             }
             function next(){
                 menu.classList.remove('active');
                 
-                setTimeout(back, 1000);
+                
             }
             
       
