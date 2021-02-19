@@ -6,6 +6,7 @@ function modal(){
         about = document.getElementById('about'),
         section = document.querySelectorAll('.section'),
         btnmenu = document.querySelectorAll('.menu__item'),
+        footer = document.querySelector('.footer'),
         close = document.querySelector('.btn__close');
     hbtn.addEventListener('click', function(){
         menu.classList.add('active');
@@ -18,12 +19,17 @@ function modal(){
     function back(){
         breaker.style.display = 'none';
     }
-    
+    function foot(i){
+         
+        if(i > 0){
+            footer.style.display = 'flex';
+        }
+    }
     btnmenu.forEach((item, i)=> item.addEventListener('click', function(){
             breaker.style.display = "block";
             section.forEach((item)=> item.style.display = 'none');
             
-            
+             
             setTimeout(block, 1100);
             setTimeout(next, 750);
             setTimeout(back, 3000);
@@ -35,9 +41,13 @@ function modal(){
                 
                 
             }
+           
             
+            foot(i);
       
     }));
+   
+   
     
         
     
