@@ -7,13 +7,16 @@ function modal(){
         footer = document.querySelector('.footer'),
         close = document.querySelector('.btn__close');
     hbtn.addEventListener('click', function(){
-        menu.classList.add('active');
+        menu.classList.add('slow');
+        menu.style.transform = 'translateY(100%)';
     });
     close.addEventListener('click', function(){
-        menu.classList.remove('active');
+        
+        menu.style.transform = 'translateY(-100%)';
     });
     function back(){
         breaker.style.display = 'none';
+        menu.classList.add('slow');
     }
     function foot(i){
         if(i > 0){
@@ -24,15 +27,18 @@ function modal(){
     }
     btnmenu.forEach((item, i)=> item.addEventListener('click', function(){
             breaker.style.display = "block";
+            menu.classList.remove('slow');
             section.forEach((item)=> item.style.display = 'none');
-            setTimeout(block, 1100);
+            setTimeout(block, 900);
             setTimeout(next, 750);
             setTimeout(back, 3000);
             function block(){
                 section[i].style.display = 'block';
+                
             }
             function next(){
-                menu.classList.remove('active'); 
+                menu.style.transform = 'translateY(-100%)'; 
+                
             }  
             foot(i);
     })); 
