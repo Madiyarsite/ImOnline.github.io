@@ -105,6 +105,70 @@ function modal(){
 }
 module.exports = modal;
 
+
+
+/***/ }),
+
+/***/ "./src/js/parts/percent.js":
+/*!*********************************!*\
+  !*** ./src/js/parts/percent.js ***!
+  \*********************************/
+/***/ ((module) => {
+
+function percent(){
+    let percentItem = document.querySelectorAll('.about__progress_item'),
+        percentWrapp = document.querySelector('.about__skills');
+        
+        window.addEventListener('scroll', function(){
+           let perTop = percentWrapp.getBoundingClientRect().top + 30,
+            realTop = window.pageYOffset; 
+            if(perTop < realTop){
+                percentItem.forEach((item)=> item.classList.remove('percent'));
+                done();
+            }
+            
+            
+        });
+        function done(){
+            start = setInterval(strikePlus,  98);
+        }
+        let html = document.querySelector('.html'),
+            js = document.querySelector('.js'),
+            vue = document.querySelector('.vue');
+        
+            let strike = 0;
+                
+            
+            function strikePlus(){
+                if(strike < 95){
+                    
+                    html.innerHTML = Math.round(strike) + '%' ;
+                   
+                }if(strike < 70){
+                    
+                   
+                    js.innerHTML = Math.round(strike) + '%'  ;
+                    
+                }if(strike < 85){
+                   
+                    
+                    vue.innerHTML = Math.round(strike) + '%'  ;
+                    
+                    
+                }if(strike == 98){
+                    clearInterval(start);
+                }else{
+                    
+                    console.log(strike);
+                }
+               strike += 0.1;
+            
+        }
+    
+
+}
+module.exports = percent;
+
 /***/ })
 
 /******/ 	});
@@ -139,10 +203,12 @@ module.exports = modal;
   \**************************/
 document.addEventListener('DOMContentLoaded', function(){
 let cursor = __webpack_require__(/*! ./parts/main */ "./src/js/parts/main.js"),
-    modal = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js");
+    modal = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js"),
+    percent = __webpack_require__(/*! ./parts/percent */ "./src/js/parts/percent.js");
 
     cursor();
     modal();
+    percent();
  
 });
 
