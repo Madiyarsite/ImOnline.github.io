@@ -7,35 +7,45 @@ function percent(){
             realTop = window.pageYOffset; 
             if(perTop < realTop){
                 percentItem.forEach((item)=> item.classList.remove('percent'));
+                done();
             }
+            
+            
         });
+        function done(){
+            start = setInterval(strikePlus,  98);
+        }
         let html = document.querySelector('.html'),
             js = document.querySelector('.js'),
             vue = document.querySelector('.vue');
         
-            let strike = 0,
-                start = setInterval(strikePlus, 100);
+            let strike = 0;
+                
             
             function strikePlus(){
-                if(strike > 50){
-                   
-                    html.innerHTML = strike ;
-                   
-                }if(strike > 70){
+                if(strike < 95){
                     
-                     strike++;
-                    js.innerHTML = strike ;
-                    
-                }if(strike > 90){
+                    html.innerHTML = Math.round(strike) + '%' ;
                    
-                    strike++;
-                    vue.innerHTML = strike ;
-                    console.log(strike);
+                }if(strike < 70){
+                    
+                   
+                    js.innerHTML = Math.round(strike) + '%'  ;
+                    
+                }if(strike < 85){
+                   
+                    
+                    vue.innerHTML = Math.round(strike) + '%'  ;
+                    
                     
                 }if(strike == 98){
                     clearInterval(start);
+                }else{
+                    
+                    console.log(strike);
                 }
-               
+                console.log(percentItem[0].clientWidth);
+               strike += 0.1;
             
         }
     

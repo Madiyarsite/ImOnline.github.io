@@ -1,6 +1,32 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/parts/blog.js":
+/*!******************************!*\
+  !*** ./src/js/parts/blog.js ***!
+  \******************************/
+/***/ ((module) => {
+
+function blog(){
+    if(window.clientX > 920){
+
+    
+    let blog = document.querySelectorAll('.blog__item'),
+        blogBg = document.querySelectorAll('.blog__item_bg'),
+        blogDesqr = document.querySelectorAll('.blog__desqr');
+    blog.forEach((item, i)=> item.addEventListener('mouseenter', function(){
+        blogBg[i].style.transform = 'translatey(-75%)';
+        blogDesqr[i].style.transform = 'translatey(-75%)';
+    }));
+    blog.forEach((item, i)=> item.addEventListener('mouseout', function(){
+        blogBg[i].style.transform = 'translatey(0%)';
+        blogDesqr[i].style.transform = 'translatey(0%)';
+    }));
+}}
+module.exports = blog;
+
+/***/ }),
+
 /***/ "./src/js/parts/main.js":
 /*!******************************!*\
   !*** ./src/js/parts/main.js ***!
@@ -161,6 +187,7 @@ function percent(){
                     
                     console.log(strike);
                 }
+                console.log(percentItem[0].clientWidth);
                strike += 0.1;
             
         }
@@ -204,12 +231,14 @@ module.exports = percent;
 document.addEventListener('DOMContentLoaded', function(){
 let cursor = __webpack_require__(/*! ./parts/main */ "./src/js/parts/main.js"),
     modal = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js"),
-    percent = __webpack_require__(/*! ./parts/percent */ "./src/js/parts/percent.js");
+    percent = __webpack_require__(/*! ./parts/percent */ "./src/js/parts/percent.js"),
+    blog = __webpack_require__(/*! ./parts/blog */ "./src/js/parts/blog.js");
+
 
     cursor();
     modal();
     percent();
- 
+    blog();
 });
 
 
