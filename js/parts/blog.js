@@ -1,5 +1,9 @@
 function blog(){
-    if(window.clientX > 920){
+    let media = document.body.clientWidth;
+    if(media > 935){
+
+   
+   
 
     
     let blog = document.querySelectorAll('.blog__item'),
@@ -13,5 +17,5 @@ function blog(){
         blogBg[i].style.transform = 'translatey(0%)';
         blogDesqr[i].style.transform = 'translatey(0%)';
     }));
-}}
+} }
 module.exports = blog;
