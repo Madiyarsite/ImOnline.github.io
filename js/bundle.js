@@ -233,6 +233,12 @@ module.exports = percent;
   !*** ./src/js/script.js ***!
   \**************************/
 document.addEventListener('DOMContentLoaded', function(){
+    const  load = document.querySelector('.loaded');
+        setTimeout(loaded, 2000);
+        function loaded(){
+            load.style.display = 'none';
+        }
+        
 let cursor = __webpack_require__(/*! ./parts/main */ "./src/js/parts/main.js"),
     modal = __webpack_require__(/*! ./parts/modal */ "./src/js/parts/modal.js"),
     percent = __webpack_require__(/*! ./parts/percent */ "./src/js/parts/percent.js"),
