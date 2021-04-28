@@ -29,7 +29,7 @@ function modal(){
             breaker.style.display = "block";
             menu.classList.remove('slow');
             section.forEach((item)=> item.style.display = 'none');
-            setTimeout(block, 900);
+            setTimeout(block, 700);
             setTimeout(next, 750);
             setTimeout(back, 3000);
             function block(){
