@@ -9,14 +9,18 @@ function modal(){
     hbtn.addEventListener('click', function(){
         menu.classList.add('slow');
         menu.style.transform = 'translateY(100%)';
+        document.body.style.overflow = "hidden";
     });
     close.addEventListener('click', function(){
         
         menu.style.transform = 'translateY(-100%)';
+       document.body.style.overflow = "";
+        
     });
     function back(){
         breaker.style.display = 'none';
         menu.classList.add('slow');
+        
     }
     function foot(i){
         if(i > 0){
@@ -27,6 +31,7 @@ function modal(){
     }
     btnmenu.forEach((item, i)=> item.addEventListener('click', function(){
             breaker.style.display = "block";
+            document.body.style.overflow = "";
             menu.classList.remove('slow');
             section.forEach((item)=> item.style.display = 'none');
             setTimeout(block, 700);
